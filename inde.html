@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="fontawesome-free-6.5.2-web/css/all.min.css">
     <link rel="stylesheet" href="_css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Dashboard</title>
 </head>
 <body>
     
     <header>
-        <div class="info-header">
+        <div style="align-items: center;" class="info-header">
             <div class="logo">
                 <h3>Dashboard</h3>
             </div>
-            <div class="icons-header">
+            <div style="align-items: center;" class="icons-header">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
         </div>
@@ -24,6 +25,109 @@
             <img src="https://thumbs.dreamstime.com/b/s%C3%ADmbolo-de-perfil-masculino-inteligente-retrato-estilo-desenho-animado-m%C3%ADnimo-166146853.jpg">
         </div>
     </header>
+
+<section class="main">
+    <div class="sidebar">
+        <h3>Home</h3>
+        <a href="#"><i class="fa-solid fa-house"></i> Relatorios</a>
+        <a href="#"><i class="fa-solid fa-file"></i> Notas Fiscais</a>
+        <a href="#"><i class="fa-solid fa-circle-dollar-to-slot"></i> Impostos</a>
+        <a href="#"><i class="fa-solid fa-circle-exclamation"></i> Notificações</a>
+        <br>
+        <hr>
+    </div>
+    <div class="content">
+        <div class="titulo-secao">
+            <h2>Dashboard sale</h2>
+            <br>
+            <hr>
+            <br>
+            <p><i class="fa-solid fa-house"></i> / Dashboard Thiago </p>
+        </div>
+
+        <div class="box-info">
+            <div style="background: linear-gradient(45deg, #ff5370, #ff869a);" class="box-single">
+                <div class="info-text">
+                    <h3>Notas Emitidas</h3>
+                    <p>53 notas</p>
+                </div>
+                <i class="fa-solid fa-folder-open"></i>
+            </div>
+            <div style="background: linear-gradient(45deg, #4099ff, #73b4ff);" class="box-single">
+                <div class="info-text">
+                    <h3>Impostos</h3>
+                    <h6>04/2024</h6>
+                    <p>R$1.000,00</p>
+                </div>
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+            </div>
+            <div style="background: linear-gradient(45deg, #2ed8b6, #59e0c5);" class="box-single">
+                <div class="info-text">
+                    <h3>Faturamento</h3>
+                    <h6>04/2024</h6>
+                    <p>R$1.000,00</p>
+                </div>
+                <i class="fa-solid fa-money-check-dollar"></i>
+            </div>
+        </div>
+        <div class="grafico">
+            <canvas id="grafico1"></canvas>
+            <script>
+                const ctx = document.getElementById('grafico1');
+              
+                new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                    datasets: [{
+                      label: '# of Votes',
+                      data: [12, 19, 3, 5, 2, 3],
+                      borderWidth: 1
+                    }]
+                  },
+                  options: {
+                    scales: {
+                      y: {
+                        beginAtZero: true
+                      }
+                    }
+                  }
+                });
+              </script>
+        </div>
+        <div class="feed">
+            <div class="feed-single">
+                <div class="feed-text">
+                    <div class="circle-icon"><i class="fa-solid fa-bell"></i></div>
+                    <span>Tutorial Novo</span>
+                </div>
+                <div class="feed-time">
+                    <h3>30 minutes ago</h3>
+                </div>
+            </div>
+            <div class="feed-single">
+                <div class="feed-text">
+                    <div class="circle-icon"><i class="fa-solid fa-coins"></i></div>
+                    <span>Faturamento Total</span>
+                </div>
+                <div class="feed-time">
+                    <h3>R$ 19.834,33</h3>
+                </div>
+            </div>
+            <div class="feed-single">
+                <div class="feed-text">
+                    <div class="circle-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <span>Mensagens</span>
+                </div>
+                <div class="feed-time">
+                    <h3>5 mensagens não lidas</h3>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
 
 </body>
 </html>
